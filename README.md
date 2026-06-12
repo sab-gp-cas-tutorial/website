@@ -11,7 +11,7 @@
 
 How can we design agents that behave adaptively while keeping their internal mechanisms interpretable?
 
-In this hands-on tutorial, participants will learn how **genetic programming** and **symbolic regression** can be used to discover compact, readable update rules for agent-based models. We combine [Kozax](https://github.com/sdevries0/Kozax), a scalable genetic programming library in JAX, with [ABMax](https://github.com/siddharth-chaturvedi/ABMax), a JAX-based agent-based modelling framework, to construct and evaluate interpretable models of complex adaptive systems.
+In this hands-on tutorial, participants will learn how **genetic programming** and **symbolic regression** can be used to discover compact, readable update rules for agent-based models. We combine [Kozax](https://github.com/sdevries0/Kozax), a scalable genetic programming library in JAX, with [ABMax](https://github.com/i-m-iron-man/abmax.git), a JAX-based agent-based modelling framework, to construct and evaluate interpretable models of complex adaptive systems.
 
 The tutorial introduces core ideas through a practical **consensus task**: agents must combine noisy individual information with local social information. Participants will use genetic programming to discover an agent update rule and compare the resulting equation with a known hand-designed mechanism.
 
