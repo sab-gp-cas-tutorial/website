@@ -9,7 +9,7 @@
 
 ## Overview
 
-How can we design agents that behave adaptively while keeping their internal mechanisms interpretable?
+How can we design complex systems that behave adaptively while being interpretable at the same time?
 
 In this hands-on tutorial, participants will learn how **genetic programming** and **symbolic regression** can be used to discover compact, readable update rules for agent-based models. We combine [Kozax](https://github.com/sdevries0/Kozax), a scalable genetic programming library in JAX, with [ABMax](https://github.com/i-m-iron-man/abmax.git), a JAX-based agent-based modelling framework, to construct and evaluate interpretable models of complex adaptive systems.
 
@@ -28,7 +28,7 @@ This tutorial is aimed at researchers and students interested in any of the foll
 - Collective behaviour and multi-agent systems
 - JAX-based scientific computing
 
-**Prerequisites:** Basic familiarity with Python is helpful. Prior experience with JAX, genetic programming, or agent-based modelling is **not required**.
+**Prerequisites:** Basic familiarity with Python, JAX, genetic programming and agent-based modelling is helpful. A primer on JAX, genetic programming, and agent-based modelling will be provided.
 
 ---
 
