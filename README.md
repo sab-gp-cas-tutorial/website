@@ -18,8 +18,8 @@ The tutorial introduces core ideas through a practical **consensus task**: agent
 ---
 
 ## Frameworks
-- Kozax: Kozax introduces a general framework for evolving computer programs with genetic programming in JAX. With JAX, the computer programs can be vectorized and evaluated on parallel on CPU and GPU. Furthermore, just-in-time compilation provides massive speedups for evolving offspring.
-- ABMax: Abmax is a general-purpose agent-based modeling(ABM) framework in Jax
+- Kozax introduces a general framework for evolving computer programs with genetic programming in JAX. With JAX, the computer programs can be vectorized and evaluated on parallel on CPU and GPU. Furthermore, just-in-time compilation provides massive speedups for evolving offspring.
+- ABMax is a general-purpose agent-based modeling(ABM) framework in Jax
 It provides:
   - Two algorithms to apply unique updates to a dynamic number of agents selected during run-time. Both are JIT-friendly and can be vectorized across different number of models
     * Rank-Match (RM)
