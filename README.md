@@ -79,8 +79,6 @@ Installation instructions, tutorial notebooks, and supporting materials will be 
 | Installation instructions | *Coming soon* |
 | Slides | *Coming soon* |
 | Jupyter notebooks | *Coming soon* |
-| ABMax documentation | *Coming soon* |
-| Kozax documentation | *Coming soon* |
 
 ---
 
