@@ -17,6 +17,21 @@ The tutorial introduces core ideas through a practical **consensus task**: agent
 
 ---
 
+## Frameworks
+- Kozax: Kozax introduces a general framework for evolving computer programs with genetic programming in JAX. With JAX, the computer programs can be vectorized and evaluated on parallel on CPU and GPU. Furthermore, just-in-time compilation provides massive speedups for evolving offspring.
+- ABMax: Abmax is a general-purpose agent-based modeling(ABM) framework in Jax
+It provides:
+  - Two algorithms to apply unique updates to a dynamic number of agents selected during run-time. Both are JIT-friendly and can be vectorized across different number of models
+    * Rank-Match (RM)
+    * Sort-Count-Iterate (SCI)
+  - JAX-transformation-friendly data structures and functions that can be used to define sets of agents and their manipulations.
+    * Selecting agents based on a run-time determined key.
+    * Searching and sorting agents based on their attributes.
+    * Updating an arbitrary number of agents to a specific state.
+    * Stepping agents in a vectorized way.
+    * Running multiple such simulations in parallel.
+  - Implementation of common algorithms used in ABM implemented in vmap and JIT-friendly way.
+
 ## Who Should Attend?
 
 This tutorial is aimed at researchers and students interested in any of the following:
@@ -91,6 +106,9 @@ Siddharth is a developer of ABMax, a JAX-based framework for scalable agent-base
 **Sigur de Vries**  
 Department of Machine Learning and Neural Computing, Donders Institute for Brain, Cognition and Behaviour, Radboud University.  
 Sigur is a developer of Kozax, a flexible and scalable genetic programming library implemented in JAX.
+
+**Artificial Cognitive Systems lab**
+led by [prof. Marcel van Gerven](https://scholar.google.com/citations?user=sX0ZypwAAAAJ&hl=en), studies the computational mechanisms of learning, inference and control in natural and artificial systems. To this end, we bring together ideas from a wide range of disciplines such as machine learning, computational neuroscience, control theory, dynamical systems theory, statistical physics and theoretical biology. Ultimately, our goal is to bridge the gap between natural and artificial intelligence and contribute more capable and efficient AI solutions to address a wide variety of scientific and societal challenges.
 
 ---
 
