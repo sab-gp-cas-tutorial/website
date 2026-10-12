@@ -3,7 +3,7 @@
 **A hands-on SAB 2026 tutorial with JAX, Kozax, and ABMax**
 
 > SAB 2026 — From Animals to Animats 18  
-> Berlin, Germany · October 2026 · Half-day tutorial
+> Berlin, Germany · October 2026 · Four hours, including breaks
 
 ---
 
@@ -11,13 +11,14 @@
 
 How can we design complex systems that behave adaptively while being interpretable at the same time?
 
-In this hands-on tutorial, participants will learn how **genetic programming** and **symbolic regression** can be used to discover compact, readable update rules for agent-based models. We combine [Kozax](https://github.com/sdevries0/Kozax), a scalable genetic programming library in JAX, with [ABMax](https://github.com/i-m-iron-man/abmax.git), a JAX-based agent-based modelling framework, to construct and evaluate interpretable models of complex adaptive systems.
+In this hands-on tutorial, participants will learn how **genetic programming** can be used to discover compact, readable behavioural rules for agent-based models. We combine [Kozax](https://github.com/sdevries0/Kozax), a scalable genetic programming library in JAX, with [ABMax](https://github.com/i-m-iron-man/abmax.git), a JAX-based agent-based modelling framework, to construct and evaluate interpretable models of complex adaptive systems.
 
-The tutorial introduces core ideas through a practical **consensus task**: agents must combine noisy individual information with local social information. Participants will use genetic programming to discover an agent update rule and compare the resulting equation with a known hand-designed mechanism.
+The tutorial introduces core ideas through **inverse Schelling's model**, an example of **Inverse Generative Social Science (IGSS)**. Participants will use genetic programming to discover local relocation rules that generate coexisting segregated and integrated neighbourhoods. The session combines primers with practical exercises: building the simulator, connecting it to evolutionary search, and interpreting the resulting rules and spatial patterns.
 
 ---
 
 ## Frameworks
+
 - Kozax introduces a general framework for evolving computer programs with genetic programming in JAX. With JAX, the computer programs can be vectorized and evaluated on parallel on CPU and GPU. Furthermore, just-in-time compilation provides massive speedups for evolving offspring.
 - ABMax is a general-purpose agent-based modeling(ABM) framework in Jax
 It provides:
@@ -43,7 +44,7 @@ This tutorial is aimed at researchers and students interested in any of the foll
 - Collective behaviour and multi-agent systems
 - JAX-based scientific computing
 
-**Prerequisites:** Basic familiarity with Python, JAX, genetic programming and agent-based modelling is helpful. A primer on JAX, genetic programming, and agent-based modelling will be provided.
+**Prerequisites:** Basic familiarity with Python is recommended. Familiarity with JAX, genetic programming and agent-based modelling is helpful; primers on these topics, complex adaptive systems, ABMax and Kozax will be provided.
 
 ---
 
@@ -51,40 +52,64 @@ This tutorial is aimed at researchers and students interested in any of the foll
 
 By the end of the tutorial, participants will be able to:
 
-1. Explain how symbolic regression can provide interpretable alternatives to black-box agent controllers
-2. Understand the basic principles of genetic programming
-3. Use essential JAX concepts: vectorisation, random number handling, and just-in-time compilation
-4. Define symbolic search spaces and evaluate candidate expressions with Kozax
-5. Construct agent-based simulations with ABMax
-6. Connect discovered symbolic expressions to agent update rules
-7. Evaluate and interpret a genetically programmed solution to a multi-agent consensus task
+1. Explain how individual agent rules and interactions generate collective patterns
+2. Formulate an IGSS problem using a target spatial pattern and a simulation fitness measure
+3. Use essential JAX concepts: arrays, vectorisation, random number handling, scans and just-in-time compilation
+4. Construct a Schelling simulation with ABMax, including relocation events, destination allocation and synchronous updates
+5. Define symbolic search spaces and evaluate candidate utility expressions with Kozax
+6. Connect Kozax to ABMax to evolve local relocation rules
+7. Compare evolved rules with baseline rules across multiple initial conditions
+8. Interpret discovered expressions and assess how well they reproduce the target patterns
 
 ---
 
 ## Tentative Schedule
 
-| Session | Topic |
-|---------|-------|
-| Introduction | Complex adaptive systems, agent-based models, and interpretable agent rules |
-| JAX Primer | Arrays, vectorisation, random numbers, and just-in-time compilation |
-| Genetic Programming with Kozax | Search spaces, candidate expressions, objectives, and selection |
-| Agent-Based Modelling with ABMax | Agents, states, parameters, and update functions |
-| Hands-on Exercise | Discovering an interpretable rule for a local consensus task |
-| Discussion | Interpreting discovered mechanisms and extending the pipeline |
+**Duration: four hours, including three 10-minute breaks.** Times below are measured from the start of the tutorial.
+
+| Elapsed time | Session | Focus |
+|--------------|---------|-------|
+| 00:00–00:20 | Complex Adaptive Systems Primer | Interactions, emergence, feedback and adaptation |
+| 00:20–00:35 | Agent-Based Modelling Primer | Explicit events, state changes and scheduling; connections to differential-equation models |
+| 00:35–00:55 | Inverse Generative Social Science | Inverse Schelling's model, target patterns and fitness |
+| 00:55–01:10 | JAX Primer | Arrays, vectorisation, random keys, scans and just-in-time compilation |
+| **01:10–01:20** | **Break** | **10 minutes** |
+| 01:20–01:35 | ABMax Primer | Agents, states, parameters and simulation functions |
+| 01:35–02:10 | ABMax Implementation | Build and run the Schelling model; inspect and modify a baseline utility rule |
+| **02:10–02:20** | **Break** | **10 minutes** |
+| 02:20–02:40 | Genetic Programming Primer | Expression trees, selection, crossover and mutation |
+| 02:40–02:50 | Kozax Primer | Features, operators and symbolic program evaluation |
+| 02:50–03:05 | Kozax–ABMax Interface | Evaluate a candidate utility rule through the simulator and return its fitness |
+| **03:05–03:15** | **Break** | **10 minutes** |
+| 03:15–03:45 | Evolutionary Discovery | Run a small GP search, inspect trajectories and compare rules |
+| 03:45–04:00 | Interpretation and Discussion | Explain evolved rules, test fresh initial conditions and discuss extensions |
 
 ---
 
 ## Hands-on Task
 
-Agents move in a shared environment while maintaining an internal estimate of a hidden target. Some agents receive noisy information about the target; others observe only nearby neighbours.
+**Inverse Schelling's model: discovering relocation rules that generate mixed spatial patterns.**
 
-Participants will use genetic programming to search for a compact local update rule that combines social information with self-pinning. The discovered expression is then evaluated inside a scalable agent-based simulation built with ABMax.
+Blue and green agents occupy a grid containing vacant cells. Each agent evaluates its current neighbourhood and possible destinations using factors such as neighbourhood similarity, vacancy, recent movement, neighbourhood residence age and relocation distance. The aim is to discover compact utility expressions whose interactions generate coexisting homogeneous blue, homogeneous green and mixed neighbourhoods.
+
+The exercise builds on **[Generating Mixed Patterns of Residential Segregation: An Evolutionary Approach](https://www.jasss.org/26/2/7.html)** by Chathika Gunaratne, Erez Hatna, Joshua M. Epstein and Ivan Garibay (2023), published in *Journal of Artificial Societies and Social Simulation*, 26(2), 7.
+
+The tutorial adapts this approach to ABMax and Kozax, with **Hungarian assignment** to allocate distinct destinations and **synchronous batch updates** to commit accepted moves from a shared state snapshot. GP evolves the utility expressions while these allocation and update mechanisms remain fixed.
+
+Participants will:
+
+1. Run and visualise a baseline Schelling simulation.
+2. Define a search space of neighbourhood features and mathematical operators.
+3. Connect Kozax's candidate expressions to the ABMax simulation.
+4. Use a C-index-based fitness measure to evaluate the coexistence of the three neighbourhood types over the final part of each trajectory and across multiple scenarios.
+5. Run evolutionary search, compare discovered rules with baselines, and inspect the resulting patterns and movement histories.
+6. Test fresh initial conditions and discuss what the discovered expressions suggest about the mechanisms generating the patterns.
 
 ---
 
 ## Preparation
 
-Please bring a **laptop capable of running Python notebooks**.
+Please bring a **laptop with a web browser** to run the exercises in Google Colab. Local installation instructions will also be provided.
 
 Installation instructions, tutorial notebooks, and supporting materials will be added to this repository before the conference.
 
