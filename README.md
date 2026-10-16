@@ -105,27 +105,21 @@ Participants will:
 5. Run evolutionary search, compare discovered rules with baselines, and inspect the resulting patterns and movement histories.
 6. Test fresh initial conditions and discuss what the discovered expressions suggest about the mechanisms generating the patterns.
 
-## Hands-on tutorial
-
-Click the button below to open the tutorial in Google Colab.
-
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sab-gp-cas-tutorial/website/blob/main/tutorial/sab_tutorial.ipynb)
 
 ---
 
 ## Preparation
 
-Please bring a **laptop with a web browser** to run the exercises in Google Colab. Local installation instructions will also be provided.
+Please bring a **laptop with a web browser** and access to a Google account. The hands-on exercises will run entirely in Google Colab, so no local installation is required.
 
-Installation instructions, tutorial notebooks, and supporting materials will be added to this repository before the conference.
+Open the tutorial notebook using the link below. In Colab, select **File → Save a copy in Drive** if you want to retain your changes. The notebook will automatically download the supporting files and create the required folders.
 
-| Resource | Status |
+| Resource | Access |
 |----------|--------|
-| Tutorial repository | *Coming soon* |
-| Installation instructions | *Coming soon* |
+| Tutorial repository | [View on GitHub](https://github.com/sab-gp-cas-tutorial/website) |
+| Hands-on notebook | [Open in Google Colab](https://colab.research.google.com/github/sab-gp-cas-tutorial/website/blob/main/tutorial/sab_tutorial.ipynb) |
+| Setup instructions | Included in the notebook |
 | Slides | *Coming soon* |
-| Jupyter notebooks | *Coming soon* |
-
 ---
 
 ## Instructors
