@@ -105,6 +105,12 @@ Participants will:
 5. Run evolutionary search, compare discovered rules with baselines, and inspect the resulting patterns and movement histories.
 6. Test fresh initial conditions and discuss what the discovered expressions suggest about the mechanisms generating the patterns.
 
+## Hands-on tutorial
+
+Click the button below to open the tutorial in Google Colab.
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sab-gp-cas-tutorial/website/blob/main/tutorial/sab_tutorial.ipynb)
+
 ---
 
 ## Preparation
