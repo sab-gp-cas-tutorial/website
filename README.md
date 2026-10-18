@@ -120,7 +120,6 @@ Open the tutorial notebook using the link below. In Colab, select **File → Sav
 | Hands-on notebook | [Open in Google Colab](https://colab.research.google.com/github/sab-gp-cas-tutorial/website/blob/main/tutorial/sab_tutorial.ipynb) |
 | Setup instructions | Included in the notebook |
 | Slides | [View here](https://docs.google.com/presentation/d/1heJN129jgIHIrQ1HQeg32m0ujRRsACsh/edit?usp=sharing&ouid=102615649183888622882&rtpof=true&sd=true) |
----
 
 ## Instructors
 
